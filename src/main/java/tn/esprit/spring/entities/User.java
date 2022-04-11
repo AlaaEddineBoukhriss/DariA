@@ -5,11 +5,15 @@ import java.util.Set;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
+
+import tn.esprit.spring.entities.Role;
 
 
 
@@ -18,6 +22,17 @@ public class User implements Serializable{
 	@Id
 	@GeneratedValue (strategy = GenerationType.IDENTITY)
 	private Long id; 
+	@Enumerated(EnumType.STRING)
+    private Role Role;
+	private String name;
+	private String email;
+	private String password;
+	private String num;
+	private boolean statut;
+	
+	private String favoris;
+
+
 	
 	//relation
 		@OneToMany(cascade = CascadeType.ALL)
@@ -31,4 +46,6 @@ public class User implements Serializable{
 		@OneToMany(cascade = CascadeType.ALL)
 		private Set<SouscriptionAssurance> SouscriptionAssurance;
 	
+		
+		
 }
