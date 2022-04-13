@@ -9,7 +9,31 @@ import javax.persistence.Id;
 
 @Entity
 public class Credit implements Serializable {
+	
 	@Id
 	@GeneratedValue (strategy = GenerationType.IDENTITY)
 	private Long id;
+	private double autoFinancement;
+	public Long getId() {
+		return id;
+	}
+	public void setId(Long id) {
+		this.id = id;
+	}
+	public double getAutoFinancement() {
+		return autoFinancement;
+	}
+	public void setAutoFinancement(double autoFinancement) {
+		this.autoFinancement = autoFinancement;
+	}
+	public Credit(Long id, double autoFinancement) {
+		super();
+		this.id = id;
+		this.autoFinancement = autoFinancement;
+	}
+	public Credit() {
+		super();
+	}
+	
+	
 }
