@@ -1,14 +1,18 @@
 package tn.esprit.spring.entities;
 
 import java.io.Serializable;
+<<<<<<< HEAD
 import java.sql.Date;
 import java.util.Arrays;
+=======
+>>>>>>> 2ae34a2fec26249b7828f9dbf3c66fe83d18d2a8
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+<<<<<<< HEAD
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 
@@ -228,5 +232,23 @@ public class Annonce implements Serializable {
 	private User user;
 	
 	@OneToOne(cascade = CascadeType.ALL, mappedBy = "Annonce")
+=======
+import javax.persistence.OneToOne;
+
+
+
+@Entity
+public class Annonce implements Serializable {
+
+	@Id
+	@GeneratedValue (strategy = GenerationType.IDENTITY)
+	private Long id; 
+	
+	
+	//relation
+	@OneToOne(cascade = CascadeType.ALL, mappedBy="Annonce")
+	private Immobilier Immobilier;
+	@OneToOne(cascade = CascadeType.ALL, mappedBy="Annonce")
+>>>>>>> 2ae34a2fec26249b7828f9dbf3c66fe83d18d2a8
 	private Visite Visite;
 }
